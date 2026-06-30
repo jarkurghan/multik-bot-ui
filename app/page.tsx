@@ -60,17 +60,8 @@ export default async function Home() {
                             />
                             <div className="flex items-center gap-2 h-9">
                                 <div className="flex items-center gap-2 bg-black/40 px-3 py-2 rounded-lg h-9">
-                                    <span className="text-[#f5c518] text-xl leading-none">★</span>
                                     <div>
-                                        <p className="text-zinc-400 font-black text-md leading-none">{featured.rating.toFixed(1)}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-2 h-9">
-                                <div className="flex items-center gap-2 bg-black/40 px-3 py-2 rounded-lg h-9">
-                                    <span className="text-[#f5c518] text-xl leading-none">★</span>
-                                    <div>
-                                        <p className="text-zinc-500 text-sm mt-0.5">{featured.votes} ovoz</p>
+                                        <p className="text-zinc-500 text-sm mt-0.5">{featured.total_count} marta ko'rilgan</p>
                                     </div>
                                 </div>
                             </div>
@@ -105,12 +96,12 @@ export default async function Home() {
                                     <p className="text-zinc-500 text-xs mt-1">
                                         {movie.year} · {movie.duration}
                                     </p>
-                                    <div className="flex items-center gap-1.5 mt-1">
+                                    {/* <div className="flex items-center gap-1.5 mt-1">
                                         <span className="text-[#f5c518] text-xs">★</span>
                                         <span className="text-zinc-300 text-xs font-semibold">{movie.rating.toFixed(1)}</span>
                                         <span className="text-zinc-600 text-xs">({movie.votes})</span>
-                                    </div>
-                                    {movie.description && <p className="text-zinc-500 text-xs mt-2 line-clamp-2 leading-relaxed">{movie.description}</p>}
+                                    </div> */}
+                                    {movie.description && <p className="text-zinc-500 text-xs mt-2 line-clamp-3 leading-relaxed">{movie.description}</p>}
                                 </div>
                                 <div className="flex gap-1 mt-2 flex-wrap">
                                     {movie.genres.slice(0, 3).map((g) => (

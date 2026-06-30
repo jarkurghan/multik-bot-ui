@@ -24,8 +24,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
                     {movie.year} · {movie.duration}
                 </p>
                 <div className="flex items-center gap-1 mt-1">
-                    <span className="text-[#f5c518bb] text-xs font-bold">★ {movie.rating.toFixed(1)}</span>
-                    <span className="text-zinc-500 text-xs">({movie.votes})</span>
+                    <span className="text-[#bd9883bb] text-xs font-bold">{movie.total_count} marta ko'rilgan</span>
                 </div>
                 <KorishButton
                     code={movie.code}

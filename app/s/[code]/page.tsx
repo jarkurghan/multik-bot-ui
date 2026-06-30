@@ -109,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ code: string 
                                 )}
                             </div>
 
-                            {rating > 0 && (
+                            {/* {rating > 0 && (
                                 <div className="flex items-center gap-3">
                                     <div className="flex items-center gap-2 bg-black/40 px-3 py-2 rounded-lg">
                                         <span className="text-[#f5c518] text-xl leading-none">★</span>
@@ -119,7 +119,7 @@ export default async function Page({ params }: { params: Promise<{ code: string 
                                         </div>
                                     </div>
                                 </div>
-                            )}
+                            )} */}
 
                             {series.plot && <p className="text-zinc-300 text-sm leading-relaxed max-w-lg">{series.plot}</p>}
 

@@ -33,9 +33,7 @@ export default function MovieGrid({ movies }: { movies: Movie[] }) {
                                 {movie.year} · {movie.duration}
                             </p>
                             <div className="flex items-center gap-1.5 mt-1">
-                                <span className="text-[#f5c518] text-xs">★</span>
-                                <span className="text-zinc-300 text-xs font-semibold">{movie.rating.toFixed(1)}</span>
-                                <span className="text-zinc-600 text-xs">({movie.votes})</span>
+                                <span className="text-zinc-500 text-xs font-bold">{movie.total_count} marta ko'rilgan</span>
                             </div>
                             {movie.description && (
                                 <p className="text-zinc-500 text-xs mt-2 line-clamp-2 leading-relaxed">

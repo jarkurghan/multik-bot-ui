@@ -23,6 +23,7 @@ export type Movie = {
     duration: string;
     bg: string;
     description?: string;
+    total_count?: string | number;
 };
 
 export const POSTER_GRADIENTS = [
@@ -64,6 +65,7 @@ export function toMovie(m: ApiMovie): Movie {
         duration: m.duration,
         description: m.plot || undefined,
         bg: POSTER_GRADIENTS[m.id % POSTER_GRADIENTS.length],
+        total_count: m.total_count,
     };
 }
 
