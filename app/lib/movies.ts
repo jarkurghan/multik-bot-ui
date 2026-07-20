@@ -4,7 +4,7 @@ export type ApiMovie = {
     imdb_id: string;
     title: string;
     year: string;
-    genres: string[];
+    genres: string[] | null;
     duration: string;
     info: string;
     plot: string;
@@ -19,7 +19,7 @@ export type Movie = {
     year: number;
     rating: number;
     votes: string;
-    genres: string[];
+    genres: string[] | null;
     duration: string;
     bg: string;
     description?: string;

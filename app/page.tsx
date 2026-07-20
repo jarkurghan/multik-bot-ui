@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Movie, posterUrl, fetchMovies, BASE } from "./lib/movies";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 import MovieRow from "./components/MovieRow";
 import KorishButton from "./components/KorishButton";
 
@@ -48,8 +48,12 @@ export default async function Home() {
                             <span>{featured.year}</span>
                             <span className="text-zinc-700">·</span>
                             <span>{featured.duration}</span>
-                            <span className="text-zinc-700">·</span>
-                            <span>{featured.genres.join(" / ")}</span>
+                            {featured.genres && featured.genres.length > 0 && (
+                                <>
+                                    <span className="text-zinc-700">·</span>
+                                    <span>{featured.genres.join(" / ")}</span>
+                                </>
+                            )}
                         </div>
 
                         <p className="text-zinc-300 text-sm max-w-lg leading-relaxed">{featured.description}</p>
@@ -103,19 +107,20 @@ export default async function Home() {
                                     </div> */}
                                     {movie.description && <p className="text-zinc-500 text-xs mt-2 line-clamp-3 leading-relaxed">{movie.description}</p>}
                                 </div>
-                                <div className="flex gap-1 mt-2 flex-wrap">
-                                    {movie.genres.slice(0, 3).map((g) => (
-                                        <span key={g} className="text-zinc-500 text-xs bg-zinc-800 px-1.5 py-0.5 rounded">
-                                            {g}
-                                        </span>
-                                    ))}
-                                </div>
+                                {movie.genres && movie.genres.length > 0 && (
+                                    <div className="flex gap-1 mt-2 flex-wrap">
+                                        {movie.genres.slice(0, 3).map((g) => (
+                                            <span key={g} className="text-zinc-500 text-xs bg-zinc-800 px-1.5 py-0.5 rounded">
+                                                {g}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </a>
                     ))}
                 </div>
             </section>
-
         </div>
     );
 }

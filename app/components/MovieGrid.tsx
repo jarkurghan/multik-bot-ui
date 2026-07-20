@@ -43,11 +43,12 @@ export default function MovieGrid({ movies }: { movies: Movie[] }) {
                         </div>
                         <div className="flex items-center justify-between mt-2 gap-2">
                             <div className="flex gap-1 flex-wrap min-w-0">
-                                {movie.genres.slice(0, 3).map((g) => (
-                                    <span key={g} className="text-zinc-500 text-xs bg-zinc-800 px-1.5 py-0.5 rounded">
-                                        {g}
-                                    </span>
-                                ))}
+                                {movie.genres && movie.genres.length > 0 &&
+                                    movie.genres.slice(0, 3).map((g) => (
+                                        <span key={g} className="text-zinc-500 text-xs bg-zinc-800 px-1.5 py-0.5 rounded">
+                                            {g}
+                                        </span>
+                                    ))}
                             </div>
                             <KorishButton
                                 code={movie.code}
