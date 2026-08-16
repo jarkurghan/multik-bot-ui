@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import TelegramInit from "./components/TelegramInit";
+import { Tashrif } from "tashrif/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
                 <Script src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive" />
             </head>
             <body className="min-h-full flex flex-col">
+                <Tashrif clientId={process.env.NEXT_PUBLIC_TASHRIF_CLIENT_ID!} />
                 <TelegramInit />
                 {children}
             </body>
