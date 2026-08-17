@@ -33,6 +33,7 @@ export default function RootLayout({
             <body className="min-h-full flex flex-col">
                 <Tashrif clientId={process.env.NEXT_PUBLIC_TASHRIF_CLIENT_ID!} />
                 <TelegramInit />
+                {process.env.NEXT_PUBLIC_TASHRIF_CLIENT_ID}
                 {children}
             </body>
         </html>
