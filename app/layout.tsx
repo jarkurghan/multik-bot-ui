@@ -27,7 +27,6 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     const headerList = await headers();
-    const hostname = headerList.get("host");
 
     return (
         <html
@@ -41,7 +40,6 @@ export default async function RootLayout({
             <body className="min-h-full flex flex-col">
                 <Tashrif clientId={process.env.NEXT_PUBLIC_TASHRIF_CLIENT_ID!} />
                 <TelegramInit />
-                {hostname}
                 {children}
             </body>
         </html>
